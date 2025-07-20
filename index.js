@@ -1,10 +1,11 @@
-const express = require('express')
-const ServerlessHttp = require('serverless-http')
-const app = express()
+// index.js
+const express = require('express');
+const serverless = require('serverless-http');
+
+const app = express();
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('✅ Vercel Express API is working!');
+});
 
-})
-//app.listen(3000, () => console.log(`Listening on: http://localhost:3000`))
-module.exports = ServerlessHttp(app)
+module.exports = serverless(app);
